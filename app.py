@@ -41,10 +41,14 @@ covid_df_clean[['Lat', 'Long_', 'Confirmed', 'Combined_Key']].apply(lambda x: ci
 html_map = map._repr_html_()
 
 
-# Flask
+# Flask w/ MongoDB
 from flask import Flask, render_template
+from flask_pymongo import PyMongo
 
 app = Flask(__name__)
+
+app.config["MONGO_URI"] = "mongodb://localhost:27017/covid_db"
+mongo = PyMongo(app)
 
 @app.route('/')
 def home():
