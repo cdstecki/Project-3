@@ -1,7 +1,12 @@
-<h1>Hello!</h1>
+<h1>Global COVID-19 Impacts</h1>
 
 <p>**Insert Random Here**</p>
 
-{{ table | safe }}
+<h2>
+	<!-- Load plotly.js into the DOM -->
+	<script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+</h2>
 
-{{ cmap | safe}}
+<body>
+	<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+</body>
